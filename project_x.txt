@@ -1,0 +1,427 @@
+-- Проектное задание
+--Создание таблиц-источников
+CREATE  EXTERNAL TABLE ADDRESS_TYPE (ID text, C_KOD text, C_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/ADDRESS_TYPE.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CASTA (ID text, C_VALUE text, C_CODE text)
+LOCATION('gpfdist://10.30.104.107:8081/CASTA.csv')
+FORMAT 'CSV'(header QUOTE E'\u0007' delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CL_BANK (ID text,C_SWIFT_C text,CLASS_ID text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_BANK.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE CL_BANK_N (id text, c_ks text, c_bic text, c_reg_num text, c_ks_old text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_BANK_N.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CL_CATEGORIES (ID text,C_CATEGORY text,COLLECTION_ID text,C_DATE_END text,C_DATE_BEGIN text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_CATEGORIES.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CL_CORP (id text,c_all_boss text,C_REGISTER_REG_BODY text,c_ownership text,c_forma text,C_REGISTER_DECLARE_UF text,C_REGISTER_PAID_UF text,c_register_ser_svid text,c_register_num_svid text,C_REGISTER_DATE_REG text,C_REGISTER_GOS_REG_NUM_REC text,C_LONG_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_CORP.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CL_GROUP (ID text,C_NAME text,C_CODE text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_GROUP.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE CL_ORG (ID text,C_BUSINESS text,C_DATE_LIQUID text)
+LOCATION('gpfdist://10.30.104.107:8081/CL_ORG.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CLIENT (id text,c_inspect text,c_state_stage text,C_COUNTRY text,c_contacts text,c_okved_array text,C_VIDS_CL text,c_okved_in_period text,c_addresses text,C_OKATO_CODE text,c_name text,C_I_NAME text,C_INN text, C_KIO text,C_CRR text,c_kpp text,c_Resident text,c_taxr text,c_crt_dat text)
+LOCATION('gpfdist://10.30.104.107:8081/CLIENT.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE COMUNICATION (ID text,C_CODE text,C_VALUE text)
+LOCATION('gpfdist://10.30.104.107:8081/COMUNICATION.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE CONTACTS (id text,collection_id text,c_type text,c_numb text,c_dat_edt text)
+LOCATION('gpfdist://10.30.104.107:8081/CONTACTS.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE COUNTRY (ID text,C_NAME text,C_CODE text,C_END_DATE text,C_BEGIN_DATE text)
+LOCATION('gpfdist://10.30.104.107:8081/COUNTRY.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE FORM_PROPERTY (ID text,C_SHORT_NAME text,C_CODE text,C_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/FORM_PROPERTY.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE INS_RESTRICT (ID text,C_CODE text,C_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/INS_RESTRICT.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE NAMES_CITY (ID text,C_NAME text,C_COD_CITY text,C_COUNTRY text,C_STATUS text,C_PEOPLE_PLACE text)
+LOCATION('gpfdist://10.30.104.107:8081/NAMES_CITY.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE OKVED (ID text,C_CODE text)
+LOCATION('gpfdist://10.30.104.107:8081/OKVED.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE OKVED_REF (ID text,COLLECTION_ID text,C_VALUE text)
+LOCATION('gpfdist://10.30.104.107:8081/OKVED_REF.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE OWNERSHIP_TYPE (ID text,C_SHORT_NAME text,C_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/OWNERSHIP_TYPE.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE PERSONAL_ADDRESS (Id text,COLLECTION_ID text,C_TYPE text,C_CITY text,C_POST_CODE text,C_STREET text,C_HOUSE text,C_KORPUS text,C_BUILDING_NUMBER text,C_FLAT text)
+LOCATION('gpfdist://10.30.104.107:8081/PERSONAL_ADDRESS.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE PERSONS_POS (ID text,C_FASE text,COLLECTION_ID text,C_CHIEF text,C_RANGE text,C_GENERAL_ACC text,C_WORK_END text,C_WORK_BEGIN text)
+LOCATION('gpfdist://10.30.104.107:8081/PERSONS_POS.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE REGION (ID text,C_NAME text)
+LOCATION('gpfdist://10.30.104.107:8081/REGION.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE ST_CLIENT (ID text,C_KIND_LIMIT text,COLLECTION_ID text,C_DATE_BEGIN text,C_DATE_END text,C_REASON text,C_LIM_NUM text,C_DOP_INFO text,C_LIM_DATE text)
+LOCATION('gpfdist://10.30.104.107:8081/ST_CLIENT.csv')
+FORMAT 'CSV'(header delimiter ',' null '');
+
+CREATE  EXTERNAL TABLE TAX_INSP (ID text,COLLECTION_ID text,C_NAME text,C_REG_DOC_SER text,C_REG_DOC_NUMB text,C_DATE text,C_REG_DOC_DATE text,C_INSPECTOR text)
+LOCATION('gpfdist://10.30.104.107:8081/TAX_INSP.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+CREATE  EXTERNAL TABLE TAX_INSPECT (ID text,C_NAME text,C_CITY text,C_DISTRICT text,C_NUM text)
+LOCATION('gpfdist://10.30.104.107:8081/TAX_INSPECT.csv')
+FORMAT 'CSV'(header delimiter '^' null '');
+
+--Создание первоначальной витрины cust_org_primary со структурой витрины аналогичной cust_org и согласно ТЗ
+create table cust_org_primary (
+	tech_change_time timestamp,
+	tech_session_id text,
+	client_id text,
+	name text,
+	short_name text,
+	eng_name text,
+	okopf_code text,
+	okopf_name text,
+	okfc_code text,
+	okfc_name text,
+	type_of_activity text,
+	country_name text,
+	inn text,
+	inn_hist text default '[]',
+	kio text,
+	kio_hist text default '[]',
+	kpp_main text,
+	kpp_main_hist text default '[]',
+	ogrn text,
+	ogrn_hist text default '[]',
+	registration_date text,
+	registration_doc text,
+	registration_authority_name text,
+	fns_registration_date text,
+	fns_registration_doc text,
+	okato_code text,
+	okato_name text,
+	list_okved_code text default '[]',
+	list_okved_name text default '[]',
+	authorized_capital_amt text,
+	list_legal_address text default '[]',
+	list_fact_address text default '[]',
+	list_phone text default '[]',
+	list_fax text default '[]',
+	list_email text default '[]',
+	swift text,
+	is_currency_residence text,
+	is_tax_resident text,
+	director_name text,
+	chief_accountant_name text,
+	business_segment_name text,
+	bankruptcy_info text,
+	elimination_info text,
+	service_start_date text,
+	bic text,
+	reg_num text,
+	corr_acc_num text,
+	list_natural_client_id text default '[]'
+);
+
+--Наполнение витрины данными из ранее созданных таблиц
+WITH master AS (
+    SELECT * 
+    FROM client c 
+    LEFT JOIN cl_corp c1 ON c.id = c1.id
+), -- Данное CTE нужно для заполнения поля registration_authority_name. Оно предстовляет собой дублер мастер таблицы
+tax_registration as (
+	select cl.id,
+		NULLIF(CONCAT_WS(';', 
+    		ins.c_reg_doc_ser,
+    		ins.c_reg_doc_numb,
+    		ins.c_reg_doc_date,
+    		ct.c_name
+			), '') as fns_registration_doc
+	from client cl
+	left join tax_insp ins on ins.collection_id = cl.c_inspect
+	left join tax_inspect insp on insp.id = ins.c_name
+	left join names_city ct on ct.id = insp.c_city
+	where ins.c_reg_doc_ser is not null and ins.c_reg_doc_numb is not null 
+	and ins.c_reg_doc_date is not null and ct.c_name is not null
+), -- Данное CTE нужно для заполнения поля fns_registration_doc
+-- Были убраны выводы ненужных полей, алиасы, необязательные джоины таблиц client и region, а также адаптирован вывод поля fns_registration_doc
+client_legal_address as (
+	select cl.id as cl_id,
+		CONCAT('[', 
+    		ads1.c_post_code, ', ', 
+    		ci.c_name, ', ', 
+    		ads1.c_street, ', ', 
+    		ads1.c_house, ', ', 
+    		COALESCE(ads1.c_korpus, ads1.c_building_number), ', ', 
+    		ads1.c_flat,']') as address 
+	from personal_address ads1
+	left join client cl on cl.c_addresses = ads1.collection_id
+	join names_city ci on ads1.c_city = ci.id
+	join address_type at1 on ads1.c_type = at1.id
+	where at1.c_kod = 'CORP'
+), -- Данное CTE нужно для заполнения поля list_legal_address
+-- Были убраны подзапрос, группировка, переписан и оптимизирован вывод поля address
+client_fact_address as (
+	select cl.id as cl_id,
+		CONCAT('[', 
+    		ads1.c_post_code, ', ', 
+    		ci.c_name, ', ', 
+    		ads1.c_street, ', ', 
+    		ads1.c_house, ', ', 
+    		COALESCE(ads1.c_korpus, ads1.c_building_number), ', ', 
+    		ads1.c_flat,']') as address 
+	from personal_address ads1
+	left join client cl on cl.c_addresses = ads1.collection_id
+	join names_city ci on ads1.c_city = ci.id
+	join address_type at1 on ads1.c_type = at1.id
+	where at1.c_kod = 'FACT'
+), -- Данное CTE нужно для заполнения поля list_fact_address
+phone_list as (
+	select cnt.collection_id,
+	CONCAT('[',STRING_AGG(cnt.c_numb,', '),']') as list_phone 
+	from contacts cnt 
+	left join comunication cmnc on cmnc.id = cnt.c_type 
+	where cmnc.c_code in ('PHONE','MOBILEPHONE') 
+	group by cnt.collection_id
+), -- Данное CTE нужно для заполнения поля list_phone
+-- Был переписан вывод поля list_phone
+fax_list as (
+	select cnt.collection_id,
+	CONCAT('[',STRING_AGG(cnt.c_numb,', '),']') as list_fax 
+	from contacts cnt 
+	left join comunication cmnc on cmnc.id = cnt.c_type 
+	where cmnc.c_code in ('FAX') 
+	group by cnt.collection_id
+), -- Данное CTE нужно для заполнения поля list_fax
+-- Был переписан вывод поля list_fax
+email_list as (
+	select cnt.collection_id,
+	CONCAT('[',STRING_AGG(cnt.c_numb,', '),']') as list_email 
+	from contacts cnt 
+	left join comunication cmnc on cmnc.id = cnt.c_type 
+	where cmnc.c_code in ('MAIL') 
+	group by cnt.collection_id
+), -- Данное CTE нужно для заполнения поля list_email
+-- Был переписан вывод поля list_email
+chief as (
+	SELECT pers.collection_id,
+		STRING_AGG(clfl.c_name, ',') AS namepers
+	FROM persons_pos pers
+	LEFT JOIN client clfl ON pers.c_fase = clfl.id
+	JOIN cl_corp clc ON clc.c_all_boss = pers.collection_id
+	WHERE pers.c_chief = '1'
+	GROUP BY pers.collection_id
+), -- Данное CTE нужно для заполнения поля director_name
+chief_accountant_name as (
+	SELECT pers.collection_id,
+	       STRING_AGG(clfl.c_name, ',') AS namepers
+	FROM persons_pos pers
+	LEFT JOIN client clfl ON pers.c_fase = clfl.id
+	JOIN cl_corp clc ON clc.c_all_boss = pers.collection_id
+	WHERE pers.c_general_acc = '1' OR EXISTS (
+	    SELECT 1
+	    FROM casta c
+	    WHERE c.id = pers.c_range
+	    AND UPPER(c.c_value) = 'ГЛАВНЫЙ БУХГАЛТЕР'
+	)
+	GROUP BY pers.collection_id
+),-- Данное CTE нужно для заполнения поля chief_accountant_name
+bank_and_elim_info as (
+		select c.id as id_client,
+			row_number () over (partition by c.id order by stc.c_lim_date desc, stc.id desc) as ord, 
+			stc.id,--"id состояния"
+			stc.c_kind_limit,--"вид ограничения" 
+			stc.c_reason,--"основание" 
+			ir.c_name,--"ограничение" 
+			stc.c_date_begin,--"дата начала" 
+			stc.c_date_end,--"дата окончания" 
+			stc.c_lim_num,--"номер решения" 
+			stc.c_lim_date,--"дата решения" 
+			stc.c_dop_info, 
+			ir.c_code, 
+			case 
+				when ir.c_code like 'BANKRUPT%' then 'b'
+				when ir.c_code like 'LIQUIDATION%' then 'l' 
+			end as code,
+			CONCAT_WS('; ', stc.id, stc.c_kind_limit, stc.c_reason, ir.c_name, stc.c_date_begin, stc.c_date_end, stc.c_lim_num, stc.c_lim_date, stc.c_dop_info) AS info
+		from ins_restrict ir 
+		join st_client stc on stc.c_kind_limit = ir.id 
+		join client c on stc.collection_id = c.c_state_stage
+		where (to_date(stc.c_date_begin, 'DD.MM.YY') <= CURRENT_DATE or stc.c_date_begin is null) 
+		and (to_date(stc.c_date_end, 'DD.MM.YY') > CURRENT_DATE or stc.c_date_end is null) 
+		and (ir.c_code like 'BANKRUPT%'
+		or ir.c_code like 'LIQUIDATION%')
+		group by c.id, stc.id, stc.c_kind_limit,
+		stc.c_reason, ir.c_name,
+		stc.c_date_begin, stc.c_date_end,
+		stc.c_lim_num, stc.c_dop_info,
+		stc.c_lim_date, ir.c_code
+),-- Данное CTE нужно для заполнения поля bankruptcy_info
+natural_client_id as(
+	SELECT zp.collection_id,
+		CONCAT('[',STRING_AGG(zp.c_fase, ', '),']') AS concatenated_values
+	FROM persons_pos zp
+	LEFT JOIN casta c ON c.id = zp.c_range
+	LEFT JOIN cl_corp clc ON clc.c_all_boss = zp.collection_id
+	LEFT JOIN form_property fpr ON fpr.id = clc.c_forma
+	WHERE clc.c_all_boss = zp.collection_id 
+	AND (c.c_code = 'C_IP' 
+	    OR (UPPER(c.c_value) LIKE '%ИНД%' 
+	        OR UPPER(c.c_value) LIKE '%ПРЕДПРИ%'
+	        OR fpr.c_short_name = 'ИП' 
+	        OR UPPER(c.c_value) LIKE '%ПРЕЗИДЕНТ%') 
+        	AND COALESCE(zp.c_chief, '1') = '1')
+	group by zp.collection_id
+)-- Данное CTE нужно для заполнения поля list_natural_client_id
+-- Была добавлена группировка, необходимые для условия join`ы, оптимизирован вывод значения concatenated_values
+insert into cust_org_primary (
+	tech_change_time, tech_session_id, client_id, name, short_name, eng_name,
+	okopf_code, okopf_name, okfc_code, okfc_name, type_of_activity, country_name,
+	inn, inn_hist, kio, kio_hist, kpp_main, kpp_main_hist, ogrn, ogrn_hist, registration_date,
+	registration_doc, registration_authority_name, fns_registration_date, fns_registration_doc,
+	okato_code, okato_name, list_okved_code, list_okved_name, authorized_capital_amt,
+	list_legal_address, list_fact_address, list_phone, list_fax, list_email, swift,
+	is_currency_residence, is_tax_resident, director_name, chief_accountant_name,
+	business_segment_name, bankruptcy_info, elimination_info, service_start_date,
+	bic, reg_num, corr_acc_num, list_natural_client_id
+)
+select current_timestamp,
+	pg_backend_pid(),
+	c.id,
+	cl_corp.c_long_name,
+	c.c_name,
+	c.c_i_name,
+	form_property.c_code,
+	form_property.c_name,
+	ownership_type.c_short_name,
+	ownership_type.c_short_name,
+	cl_org.c_business,
+	COUNTRY.c_name,
+	c.c_inn,
+	'[]',
+	c.c_kio,
+	'[]',
+	coalesce (c.c_crr, c.c_kpp),
+	'[]',
+	cl_corp.c_register_gos_reg_num_rec,
+	'[]',
+	TO_CHAR (to_date(cl_corp.c_register_date_reg, 'DD.MM.YY'), 'YYYYMMDD'),
+	cl_corp.c_register_ser_svid || ' ' || cl_corp.c_register_num_svid,
+	coalesce (master.c_long_name, master.c_name),
+	TO_CHAR (to_date(tax_insp.c_date, 'DD.MM.YY'), 'YYYYMMDD'),
+	tax_registration.fns_registration_doc,
+	c.c_okato_code,
+	null,
+	'[]',
+	'[]',
+	cast(coalesce (cl_corp.c_register_declare_uf, cl_corp.c_register_paid_uf) as numeric(20,2)),
+	coalesce(cla.address, '[]'),
+	coalesce(cfa.address, '[]'),
+	coalesce(phone_list.list_phone, '[]'),
+	coalesce(fax_list.list_fax, '[]'),
+	coalesce(email_list.list_email, '[]'),
+	cl_bank.id,
+	case
+		when c.c_resident = '1' then 'Y'
+		when c.c_resident = '0' then 'N'
+		else '-'
+	end,
+	case
+		when c.c_taxr = '1' then 'Y'
+		when c.c_taxr = '0' then 'N'
+		else '-'
+	end,
+	chief.namepers,
+	can.namepers,
+	cl_group.c_name,
+	bei.info,
+	bei2.info,
+	TO_CHAR (to_date(c.c_crt_dat, 'DD.MM.YY'), 'YYYYMMDD'),
+	cl_bank_n.c_bic,
+	cl_bank_n.c_reg_num,
+	cl_bank_n.c_ks,
+	coalesce(nci.concatenated_values, '[]')
+from client c
+left join cl_corp on c.id = cl_corp.id
+left join form_property on form_property.id = cl_corp.c_forma
+left join ownership_type on ownership_type.id = cl_corp.c_ownership
+left join cl_org on cl_org.id = c.id
+left join COUNTRY on COUNTRY.id = c.c_country
+left join tax_insp on c.c_inspect = tax_insp.collection_id
+left join master on cl_corp.id = master.c_register_reg_body
+left join tax_registration on c.id = tax_registration.id
+left join client_legal_address cla on cla.cl_id = c.id
+left join client_fact_address cfa on cfa.cl_id = c.id
+left join phone_list on c.c_contacts = phone_list.collection_id
+left join fax_list on c.c_contacts = fax_list.collection_id
+left join email_list on c.c_contacts = email_list.collection_id
+left join cl_bank on cl_bank.id = c.id
+left join chief on chief.collection_id = cl_corp.c_all_boss
+left join chief_accountant_name can on can.collection_id = cl_corp.c_all_boss
+left join cl_categories on cl_categories.collection_id = c.c_vids_cl
+left join cl_group on cl_group.id = cl_categories.c_category 
+left join bank_and_elim_info bei on bei.id_client = c.id and bei.code = 'b' and bei.ord = 1
+left join bank_and_elim_info bei2 on bei.id_client = c.id and bei.code = 'l' and bei.ord = 1
+left join cl_bank_n on cl_bank_n.id = c.id 
+left join natural_client_id nci on cl_corp.c_all_boss = nci.collection_id;
+
+--Создание итоговой витрины данных, установка двух уровней партицирования: 
+--первый по последнему символу из поля inn, второй по первому символу из поля inn
+alter table cust_org_primary
+add column last_simbol int;
+
+update  cust_org_primary 
+set last_simbol= right (inn , 1) ::int;
+
+alter table cust_org_primary
+add column first_simbol int;
+
+update  cust_org_primary 
+set first_simbol= left (inn , 1) ::int;
+
+CREATE TABLE cust_org (LIKE cust_org_primary)
+PARTITION BY RANGE(last_simbol)
+  subpartition  BY RANGE(first_simbol)
+  SUBPARTITION TEMPLATE 
+  (START(0) INCLUSIVE
+   END(9) INCLUSIVE
+  ,
+   DEFAULT subpartition  other)
+(START(0) INCLUSIVE
+ END(9) INCLUSIVE
+,
+ DEFAULT PARTITION other);
+ 
+INSERT INTO cust_org SELECT * FROM cust_org_primary;
+
+--Вывод таблицы для сверки
+ SELECT * FROM cust_org WHERE inn LIKE '123%';
+
+
+--поиск людей занимающихся ежами
+select * from cust_org where type_of_activity  LIKE ('%еж%')
